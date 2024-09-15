@@ -114,3 +114,37 @@ h1{
   color: black;
   transition: ease-in-out 0.3s;
 }
+
+.currentweather{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  position: static;
+  font-size: 2rem;
+  gap: 4rem;
+  margin-inline: 0.5rem;
+  padding: 1rem 2rem;
+  color: white;
+  border: 2px solid black;
+  border-radius: 1rem;
+  box-shadow: inset 1px 1px 10px black;
+  background-color: #0a497ac2;
+}
+
+.details{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.current-day{
+  font-size: 1.5rem;
+}
+
+.label{
+  font-size: 1rem;
+}
+
