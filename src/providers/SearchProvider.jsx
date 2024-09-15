@@ -1,6 +1,7 @@
 import { useState, useContext, createContext } from "react";
-import axios from "axios";
 import useUserLanguage from "../hooks/useUserLanguage";
+import axios from "axios";
+import modifyForecastData from "../utils/modifyForecastData";
 
 const SearchContext = createContext(undefined);
 
@@ -10,26 +11,35 @@ const units = "metric";
 
 export default function SearchProvider({ children }) {
   const [currentWeather, setCurrentWeather] = useState(null);
-
+  const [fiveDayForecast, setFiveDayForecast] = useState([]);
   const language = useUserLanguage();
 
   async function findPlace({ lat, lon }) {
     const currentWeatherUrl = `${weatherApi}/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}&lang=${language}`;
 
+    const forecastUrl = `${weatherApi}/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}&lang=${language}`;
     try {
       await axios.get(currentWeatherUrl).then((response) => {
         setCurrentWeather(response.data);
-        console.log(response.data);
       });
     } catch (error) {
       console.error("Error fetching current weather:", error);
     }
+    try {
+      await axios.get(forecastUrl).then((response) => {
+        setFiveDayForecast(modifyForecastData(response.data.list));
+      });
+    } catch (error) {
+      console.error("Error fetching forecast:", error);
+    }
   }
+
   return (
     <SearchContext.Provider
       value={{
         findPlace,
         currentWeather,
+        fiveDayForecast,
       }}
     >
       {children}
