@@ -20,3 +20,97 @@ h1{
   font-size: 3rem;
   color: white;
 }
+
+
+.wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: white;
+  margin: 2rem .5rem;
+  padding: 1rem;
+  gap: 1rem;
+  border: 2px solid black;
+  border-radius: 1rem;
+  box-shadow: inset 1px 1px 10px black;
+  background-color: #0a497ac2;
+}
+
+.search-place-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  gap: 1rem;
+}
+
+.input-wrapper{
+  position: relative;
+  width: 100%;
+  max-width: 254px;
+}
+
+.input-wrapper input{
+  border: 1px solid black;
+  border-radius: 1rem;
+  color: black;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0.5rem 0rem;
+  height: 100%;
+  width: 100%;
+}
+
+::placeholder{
+  text-align: center;
+}
+
+.list{
+  border: 1px solid #ccc;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  max-height: 180px;
+  font-size: 1.2rem;
+  overflow-y: auto;
+  color: black;
+}
+
+.filtered-option{
+  padding: 8px;
+}
+
+.filtered-option:hover{
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+.active{
+  background-color: #ddd;
+  cursor: pointer;
+  padding: 8px;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.search{
+  color: white;
+  border: 1px solid black;
+  font-size: 1.5rem;
+  padding: .5rem 1rem;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.329);
+}
+
+.search:hover{
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  transition: ease-in-out 0.3s;
+}
