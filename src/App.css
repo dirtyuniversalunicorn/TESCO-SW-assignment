@@ -148,3 +148,17 @@ h1{
   font-size: 1rem;
 }
 
+
+.findme{
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+
+.findme:hover{
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: ease-in-out 0.3s;
+  transform: scale(1.3);
+}

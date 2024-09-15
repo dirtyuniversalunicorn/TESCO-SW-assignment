@@ -3,6 +3,7 @@ import { useSearchContext } from "../providers/SearchProvider";
 import useCities from "../hooks/useCities";
 import useDebounce from "../hooks/useDebounce";
 import useClickOutside from "../hooks/useClickOutside";
+import GeolocationButton from "./GeolocationButton";
 
 export default function SearchPlace() {
   const [isOpen, setIsOpen] = useState(false);
@@ -97,6 +98,7 @@ export default function SearchPlace() {
           Hledat
         </button>
       </form>
+      <GeolocationButton />
     </div>
   );
 }
