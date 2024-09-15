@@ -238,3 +238,56 @@ h1{
 .icon{
   height: 75px;
 }
+
+
+::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(189, 189, 189);
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media (max-width: 1260px){
+  .wrapper{
+    margin-top: 0.5rem;
+  }
+  .currentweather{
+    flex-direction: column;
+  }
+  .details{
+    justify-content: center;
+  }
+  .forecast-table{
+    justify-content: center;
+    text-align: center;
+    gap: 0rem;
+    padding: 0rem 1rem;
+
+  }
+  .forecast-table th{
+    text-align: center;
+  }
+  .forecast-day{
+    padding-top: 1rem;
+    font-size: 3rem;
+  }
+  .forecast-details{
+    margin-top: 1rem;
+  }
+  .temperature-wrapper{
+    width: 100%;
+  }
+  .temperature-max{
+    font-size: 3rem;
+  }
+}
